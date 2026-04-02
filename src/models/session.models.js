@@ -1,11 +1,11 @@
 import mongoose from "mongoose"
 const sessionSchema= new mongoose.Schema({
     user:{
-        typpe:mongoose.Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"users",
         required:[true,"user is required"]
     },
-    refreshTokenHash:{
+    refreshToken:{
         type:String,
         required:[true,"refresh token hash is required"]
     },
@@ -26,3 +26,4 @@ const sessionSchema= new mongoose.Schema({
 })
 
 const sessionModel = mongoose.model("sessions",sessionSchema)
+export default sessionModel
